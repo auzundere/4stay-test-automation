@@ -23,7 +23,7 @@ public class TestBaseClass{
 	@AfterClass(alwaysRun=true)
 	public void tearDown() {
 		//driver.quit();
-		Driver.quit();
+		//Driver.quit();
 	}	
 	public static String getOnlyDigits(String str) {
 		String result ="";
