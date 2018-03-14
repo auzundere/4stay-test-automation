@@ -4,7 +4,10 @@
 	<groupId>com.4stay</groupId>
 	<artifactId>4stay-test-automation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
