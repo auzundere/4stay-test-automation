@@ -13,6 +13,7 @@ public class FS001 extends TestBaseClass{
 		driver.get(Configuration.getProperty("url"));
 		HomePage homePage = new HomePage(driver);
 		homePage.signUp.click();
+		System.out.println("Sign Up Page");
 	}
 	
 }

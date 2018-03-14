@@ -14,6 +14,7 @@ public class HomePage {
 	}
 	//Hello Everyone -Handan!
 	@FindBy(xpath="//div[@id='top-navbar']/ul/li[3]/a")
+	//1
 	public WebElement signUp;
 	
 }
