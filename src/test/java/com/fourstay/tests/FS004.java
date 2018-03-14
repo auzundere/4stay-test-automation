@@ -10,6 +10,8 @@ public class FS004 extends TestBaseClass{
 	@Test 
 	public void Test4() {
 		driver.get(Configuration.getProperty("url"));
+		
+		//@findBy(xpath='.....')
 	}
 	
 }
