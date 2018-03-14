@@ -10,6 +10,7 @@ public class FS007 extends TestBaseClass{
 	@Test 
 	public void Test7() {
 		driver.get(Configuration.getProperty("url"));
+		
 	}
 	
 }
