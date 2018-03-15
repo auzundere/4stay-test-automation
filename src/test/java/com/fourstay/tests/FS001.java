@@ -94,15 +94,20 @@ public class FS001 extends TestBaseClass{
 		//Step 7
 		//enter email address
 		//generate a gmail
-		String email = BrowserUtils.getSaltString() + "gmail.com";
+		String email = BrowserUtils.getSaltString() + "@gmail.com";
+		signUpPage.emailAddess.clear();
 		signUpPage.emailAddess.sendKeys(email);
 		//enter occupation/school
+		signUpPage.occupationOrSchool.clear();
 		signUpPage.occupationOrSchool.sendKeys("SDET");
 		//enter phone number
+		signUpPage.phone.clear();
 		signUpPage.phone.sendKeys("2011234567");
 		//enter something about yourself
+		signUpPage.about_me.clear();
 		signUpPage.about_me.sendKeys("I am SDET and I have 7 years of experience in Test Automation.");
 		//enter birth year
+		signUpPage.dob.clear();
 		signUpPage.dob.sendKeys("1974");
 		//click save.
 		signUpPage.saveButton.click();
