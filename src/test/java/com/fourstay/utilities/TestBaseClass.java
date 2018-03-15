@@ -15,7 +15,7 @@ public class TestBaseClass{
 	@BeforeClass(alwaysRun=true)
 	@Parameters("browser")
 	public void setUp(@Optional String browser) {
-		driver=Driver.getDriver(browser);
+		driver=Driver.getDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(Configuration.getProperty("url"));
 	}

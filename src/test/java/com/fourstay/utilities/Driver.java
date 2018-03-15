@@ -17,9 +17,9 @@ public class Driver {
 
 	private static WebDriver driver;
 
-	public static WebDriver getDriver(String browser) {
+	public static WebDriver getDriver() {
 		
-		String driverType = browser==null? Configuration.getProperty("browser") : browser;
+		String driverType = Configuration.getProperty("browser");
 		
 		// if browser has value, use browser
 		// else use the value from the configuration file
