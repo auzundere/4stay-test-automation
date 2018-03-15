@@ -14,10 +14,53 @@ public class SignUpPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[@class='btn facebook-btn w-100 m-0 mb-3']")
-	public WebElement facebookSignUpButton;
+	public boolean isAt() {
+		return driver.getTitle().equals("Sign Up - Room rental, roommate finder, off-campus housing, homestay | 4stay");
+	}
 	
-	public WebElement email;//facebook Email or Phone textbox
-	public WebElement pass;//facebook password textbox
-	public WebElement u_0_0; //facebook login button
+	@FindBy(xpath="//a[@class='btn facebook-btn w-100 m-0 mb-3']")
+	public WebElement facebookButton;
+	
+	@FindBy(xpath="//a[@class='btn google-btn w-100 m-0 mb-3']")
+	public WebElement googleButton;
+	
+	@FindBy(xpath="//div[@class='btn email-btn w-100 m-0 mb-3']")
+	public WebElement emailButton;
+	
+	@FindBy(xpath="//a[@class='login-link ml-auto align-self-start p-4']")
+	public WebElement loginText;
+	
+	@FindBy(xpath="//a[@ui-sref='sign-up.more-options']")
+	public WebElement moreOptions;
+	
+	@FindBy(tagName="h5")
+	public WebElement h5IwantToBe;
+	
+	@FindBy(xpath="//*[@id='sign-up-wrapper-first-screen']//h5/..//div[@class='d-flex flex-row justify-content-around w-75']/div[contains(@class,'host')]")
+	public WebElement hostButton;
+	
+	@FindBy(xpath="//*[@id='sign-up-wrapper-first-screen']//h5/..//div[@class='d-flex flex-row justify-content-around w-75']/div[contains(@class,'guest')]")
+	public WebElement guestButton;
+	
+	@FindBy(xpath="//a[@class='btn btn-primary w-100 m-0 mb-3']")
+	public WebElement nextButton;
+	
+	@FindBy(xpath="//div[@class='md-form d-flex flex-row justify-content-center file-field']//span")
+	public WebElement changeProfileImageButton;
+	
+	@FindBy(xpath="//input[@ng-model='vm.user.email']")
+	public WebElement emailAddess;
+	
+	@FindBy(xpath="//input[@ng-model='vm.user.occupation_or_school']")
+	public WebElement occupationOrSchool;
+	
+	public WebElement phone;
+	
+	public WebElement about_me;
+	
+	public WebElement dob;
+	
+	@FindBy(xpath="//button[@class='btn btn-primary w-100 m-0 ng-binding']")
+	public WebElement saveButton;
+	
 }
