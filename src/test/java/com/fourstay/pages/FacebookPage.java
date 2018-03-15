@@ -23,8 +23,8 @@ public class FacebookPage {
 	public WebElement pass;//facebook password textbox
 	public WebElement u_0_0; //facebook login button
 	
-	@FindBy(xpath="//button[@class='_42ft _4jy0 layerConfirm _1fm0 _51_n autofocus _4jy3 _4jy1 selected _51sy']")
-	public WebElement continueAs;
+//	@FindBy(xpath="//button[@class='_42ft _4jy0 layerConfirm _1fm0 _51_n autofocus _4jy3 _4jy1 selected _51sy']")
+//	public WebElement continueAs;
 	
 	
 	public boolean isAt() {
