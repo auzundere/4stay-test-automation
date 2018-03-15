@@ -2,6 +2,7 @@ package com.fourstay.tests;
 
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import com.fourstay.utilities.TestBaseClass;
 

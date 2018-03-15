@@ -1,5 +1,7 @@
 package com.fourstay.utilities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -15,6 +17,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.base.Function;
 
 public class BrowserUtils {
+	public static List<String> getElementsText(By locator) {
+
+		List<WebElement> list = driver.findElements(locator);
+		List<String> links = new ArrayList<>();
+		for (WebElement webElement : list) {
+			if (!webElement.getText().isEmpty()) {
+				links.add(webElement.getText());
+			}
+		}
+		return links;
+	}
+
 	private static WebDriver driver = Driver.getDriver();
 
 	public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
