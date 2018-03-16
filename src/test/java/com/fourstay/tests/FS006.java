@@ -68,7 +68,7 @@ public class FS006 extends TestBaseClass {
 		assertTrue(signUpPage.changeProfileImageButton.isDisplayed());
 		
 		
-		//Step 7abc
+		//Step 7
 		
 
 }
