@@ -14,7 +14,6 @@ public class GooglePage1 {
 		PageFactory.initElements(driver, this);
 	}
 	
-	//Hello scdsd
 	@FindBy(id="identifierId")
 	public WebElement email;
 	

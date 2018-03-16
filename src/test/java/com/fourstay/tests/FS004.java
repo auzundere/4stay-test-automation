@@ -1,6 +1,7 @@
 package com.fourstay.tests;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
@@ -51,19 +52,31 @@ public class FS004 extends TestBaseClass{
 				signUpPage.googleButton.click();
 				GooglePage1  googlePage= new GooglePage1(driver);
 				//Enter  email and click next
-			//BrowserUtils.waitForVisibility(signUpPage.hostButton, 10);
-				Thread.sleep(1000);
+			    BrowserUtils.waitForVisibility(googlePage.email, 4);
 				googlePage.email.sendKeys(Configuration.getProperty("googleuser"));
 				googlePage.nextEmail.click();
 				//Enter password and click next
-		   //BrowserUtils.waitForVisibility(signUpPage.hostButton, 10);
-				Thread.sleep(1000);
+		        BrowserUtils.waitForVisibility(googlePage.password, 4);
+				//it will be the password
 				googlePage.password.sendKeys(Configuration.getProperty("googlepass"));
 				googlePage.nextPassword.click();
 			
 				//step 5
 				//verify "I want to be a" text is displayed
-				assertTrue(signUpPage.h5IwantToBe.isDisplayed());
+				
+				try {
+					//BrowserUtils.waitForVisibility(signUpPage.h5IwantToBe, 4);
+					assertTrue(signUpPage.h5IwantToBe.isDisplayed());
+				}catch(AssertionError e) {
+					//verify home page loaded(the left top corner logo is displayed)
+					assertTrue(homePage.logo.isDisplayed());
+					//verify pop-up text "Successfully authenticated." is displayed
+					BrowserUtils.waitForVisibility(homePage.successful, 4);
+					assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
+					//verify "Log Out" text is appeared
+					assertTrue(homePage.logOut.isDisplayed());
+					return;
+				}
 				//verify "Host" button is displayed
 				//BrowserUtils.waitForVisibility(signUpPage.hostButton, 5);
 				assertTrue(signUpPage.hostButton.isDisplayed());
@@ -104,7 +117,9 @@ public class FS004 extends TestBaseClass{
 				signUpPage.saveButton.click();
 				//verify home page loaded(the left top corner logo is displayed)
 				assertTrue(homePage.logo.isDisplayed());
+				
 				//verify pop-up text "Successfully authenticated." is displayed
+				BrowserUtils.waitForVisibility(homePage.successful, 4);
 				assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 				//verify "Log Out" text is appeared
 				assertTrue(homePage.logOut.isDisplayed());
