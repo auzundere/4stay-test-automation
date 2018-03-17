@@ -1,9 +1,7 @@
 package com.fourstay.tests;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
-
 import org.testng.annotations.Test;
 import com.fourstay.pages.GooglePage1;
 import com.fourstay.pages.HomePage;
@@ -15,7 +13,7 @@ import com.fourstay.utilities.TestBaseClass;
 public class FS004 extends TestBaseClass{
 	
 	@Test 
-	public void Test4() throws InterruptedException {
+	public void Test4() {
 		driver.get(Configuration.getProperty("url"));
 		
 		//Step 1
