@@ -70,6 +70,10 @@ public class FS006 extends TestBaseClass {
 		
 		//Step 7
 		
+		signUpPage.dob.click();
+		signUpPage.dob.sendKeys("35022");
+		signUpPage.saveButton.click();
+		assertTrue(signUpPage.saveButton.isDisplayed());
 
 }
 

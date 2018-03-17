@@ -1,26 +1,78 @@
 package com.fourstay.tests;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
+import com.fourstay.pages.FacebookPage;
+import com.fourstay.pages.GooglePage1;
+import com.fourstay.pages.HomePage;
+import com.fourstay.pages.SignUpPage;
+import com.fourstay.utilities.BrowserUtils;
+import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
 public class SmokeTests extends TestBaseClass {
 
 	@Test
-	public void test() {
+	public void test() throws InterruptedException {
+
+		driver.get(Configuration.getProperty("url"));
+
+		HomePage homePage = new HomePage(driver);
+		assertTrue(homePage.logo.isDisplayed());
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
+		assertTrue(homePage.isAt());
+
+		// Step 2
+		homePage.signUp.click();
+		SignUpPage signUpPage = new SignUpPage(driver);
+		assertTrue(signUpPage.loginText.isDisplayed());
+		assertTrue(signUpPage.moreOptions.isDisplayed());
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/onboarding");
+		assertTrue(signUpPage.isAt());
+
+		// Step 3
+		signUpPage.moreOptions.click();
+		assertEquals(signUpPage.facebookButton.getText(), "Continue with Facebook");
+		assertEquals(signUpPage.googleButton.getText(), "Continue with Google");
+		assertEquals(signUpPage.emailButton.getText(), "Continue with Email");
+
+		// Step 4
+		signUpPage.facebookButton.click();
+		FacebookPage facebookPage = new FacebookPage(driver);
+		assertTrue(facebookPage.isAt());
+		assertTrue(facebookPage.emailOrPhoneLabel.isDisplayed());
+		assertTrue(facebookPage.passwordLabel.isDisplayed());
+
+		// step 5
+
+		facebookPage.email.sendKeys(Configuration.getProperty("facebookuser"));
+		facebookPage.pass.sendKeys(Configuration.getProperty("facebookpass"));
+		facebookPage.u_0_0.click();
+		driver.get("https://4stay.com/");
+		assertTrue(homePage.logo.isDisplayed());
+		assertTrue(homePage.logOut.isDisplayed());
 		
+		
+		//step 6
+		
+		assertTrue(homePage.searchBox.isDisplayed());
+		homePage.searchBox.sendKeys(("Seattle")+Keys.ARROW_DOWN,Keys.ENTER);
+		
+
+		
+
+		homePage.searchButton.click();
+	//	System.out.println(driver.getTitle());
+		assertTrue(driver.getTitle().contains("Seattle"));
+
+		
+
 	}
-////	public static void main(String[] args) {
-////		//write a code that takes string and
-////		//capitalizes all the words in that string.
-////		//Only the first letter of each word.
-////		String str ="write a code that takes string and";
-////		str = WordUtils.capitalize(str);
-////		System.out.println(str);
-////		str = WordUtils.initials(str);
-////		System.out.println(str);
-////		
-////	}
+
 }
