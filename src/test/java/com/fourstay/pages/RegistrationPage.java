@@ -13,9 +13,9 @@ public class RegistrationPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//h5[@class='text-center mb-4']")
+	@FindBy(tagName="h5")
 	public WebElement iWantToBe;
-		
+	
 	@FindBy(xpath ="//div[@class='role-icon host-icon']")
 	public WebElement hostButton; 
 	
