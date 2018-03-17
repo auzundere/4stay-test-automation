@@ -12,7 +12,6 @@ import org.testng.asserts.SoftAssert;
 
 import com.fourstay.pages.FacebookPage;
 import com.fourstay.pages.HomePage;
-import com.fourstay.pages.RegistrationPage;
 import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
