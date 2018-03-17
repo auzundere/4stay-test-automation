@@ -112,20 +112,24 @@ public class FS003 extends TestBaseClass{
 						
 						//Verify that the page with the following options appears:  I want to become a Host or Guest"
 						
-						RegistrationPage regPage = new RegistrationPage(driver);
+						//**RegistrationPage regPage = new RegistrationPage(driver);
 						try {
-							assertTrue(regPage.iWantToBe.isDisplayed(), "I want to be is not displayed");
+							//**assertTrue(regPage.iWantToBe.isDisplayed(), "I want to be is not displayed");
+							assertTrue(signUpPage.h5IwantToBe.isDisplayed(), "I want to be is not displayed");
 						}catch(AssertionError e) {
 							System.out.println("Account already created and there is no need to have a negative test.");
 							return;
 						}
-						softAssert.assertTrue(regPage.guestButton.isDisplayed(), "guestButton is not displayed");
-						softAssert.assertTrue(regPage.hostButton.isDisplayed(), "guestButton is not displayed");
-						
+						//**softAssert.assertTrue(regPage.guestButton.isDisplayed(), "guestButton is not displayed");
+						softAssert.assertTrue(signUpPage.guestButton.isDisplayed(), "guestButton is not displayed");
+						//**softAssert.assertTrue(regPage.hostButton.isDisplayed(), "guestButton is not displayed");
+						softAssert.assertTrue(signUpPage.hostButton.isDisplayed(), "guestButton is not displayed");
 //			Step 6.		1) Click Guest button    2) Click Next button	
 						
-						regPage.guestButton.click();
-						regPage.nextButton.click();
+						//**regPage.guestButton.click();
+						signUpPage.guestButton.click();
+						//**regPage.nextButton.click();
+						signUpPage.nextButton.click();
 						
 						//Verify that the registration page appears
 						
@@ -140,17 +144,20 @@ public class FS003 extends TestBaseClass{
 //		 	Step 7.		1) Fill up the input fields except for "Tell us about yourself" and "Year of birth"
 //		              
 						
-						regPage.emailAddress.sendKeys("ivan.Tesla@gmail.com");
-						BrowserUtils.waitForClickablility(regPage.occupation, 5);
+						//**regPage.emailAddress.sendKeys("ivan.Tesla@gmail.com");
+						signUpPage.emailAddess.sendKeys("");
+						BrowserUtils.waitForClickablility(signUpPage.occupationOrSchool, 5);
 						//Thread.sleep(500);
-						regPage.occupation.sendKeys("Bysiness Analyst");
+						//**regPage.occupation.sendKeys("Bysiness Analyst");
+						signUpPage.occupationOrSchool.sendKeys("Bysiness Analyst");
 						
 						// title before clicking save button
 						String titleBefore = driver.getTitle();
 						// 2) Click Save button
-						regPage.saveButton.click();
+						//**regPage.saveButton.click();
+						signUpPage.saveButton.click();
+						BrowserUtils.waitForClickablility(signUpPage.saveButton, 3);
 						
-						Thread.sleep(300);
 						
 						// title after clicking save button
 						String titleAfter = driver.getTitle();

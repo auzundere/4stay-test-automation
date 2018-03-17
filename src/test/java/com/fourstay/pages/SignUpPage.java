@@ -63,4 +63,11 @@ public class SignUpPage {
 	@FindBy(xpath="//button[@class='btn btn-primary w-100 m-0 ng-binding']")
 	public WebElement saveButton;
 	
+	//add by Evgeniya
+	@FindBy(xpath="//label[contains(text(),'Email address *')]")
+	public WebElement labelEmailAddress;
+	
+	//add by Evgeniya
+	@FindBy(xpath="//label[contains(text(),'Occupation/School')]")
+	public WebElement labelOccupation;
 }
