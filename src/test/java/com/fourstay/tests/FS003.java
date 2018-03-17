@@ -13,6 +13,7 @@ import com.fourstay.pages.FacebookPage;
 import com.fourstay.pages.HomePage;
 import com.fourstay.pages.RegistrationPage;
 import com.fourstay.pages.SignUpPage;
+import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
@@ -60,9 +61,10 @@ public class FS003 extends TestBaseClass{
 				
 						
 		//Step 3. Click "More Options" button 
+						BrowserUtils.waitForClickablility(signUpPage.moreOptions, 5);
 						signUpPage.moreOptions.click();
 						
-						Thread.sleep(500);
+						//Thread.sleep(500);
 						
 								
 				//*verify that page loaded correctly: URL of loaded page is equal to expected URL
@@ -102,7 +104,8 @@ public class FS003 extends TestBaseClass{
 //		          2) Click log in button		
 						facebookPage.email.sendKeys(Configuration.getProperty("facebook003user"));
 						facebookPage.pass.sendKeys(Configuration.getProperty("facebook003pass"));
-						Thread.sleep(300);
+						BrowserUtils.waitForClickablility(facebookPage.u_0_0, 3);
+						//Thread.sleep(300);
 						facebookPage.u_0_0.click();
 						
 						
@@ -132,7 +135,8 @@ public class FS003 extends TestBaseClass{
 //		              
 						
 						regPage.emailAddress.sendKeys("ivan.Tesla@gmail.com");
-						Thread.sleep(500);
+						BrowserUtils.waitForClickablility(regPage.occupation, 5);
+						//Thread.sleep(500);
 						regPage.occupation.sendKeys("Bysiness Analyst");
 						
 						// title before clicking save button
