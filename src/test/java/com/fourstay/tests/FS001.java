@@ -75,8 +75,18 @@ public class FS001 extends TestBaseClass{
 //		}catch(NoSuchElementException e) {
 //			System.out.println(e);
 //		}
+		try {
 		//verify "I want to be a" text is displayed
 		assertTrue(signUpPage.h5IwantToBe.isDisplayed());
+		}catch(AssertionError e) {
+			//verify home page loaded(the left top corner logo is displayed)
+			assertTrue(homePage.logo.isDisplayed());
+			//verify pop-up text "Successfully authenticated." is displayed
+			assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
+			//verify "Log Out" text is appeared
+			assertTrue(homePage.logOut.isDisplayed());
+			return;
+		}
 		//verify "Host" button is displayed
 		//BrowserUtils.waitForVisibility(signUpPage.hostButton, 5);
 		assertTrue(signUpPage.hostButton.isDisplayed());
