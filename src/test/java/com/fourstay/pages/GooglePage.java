@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GooglePage1 {
+public class GooglePage {
 
 	private WebDriver driver;
 
-	public GooglePage1(WebDriver driver) {
+	public GooglePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

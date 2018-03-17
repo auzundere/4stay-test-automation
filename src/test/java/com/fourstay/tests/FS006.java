@@ -6,7 +6,7 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
-import com.fourstay.pages.GooglePage1;
+import com.fourstay.pages.GooglePage;
 import com.fourstay.pages.HomePage;
 import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;
@@ -40,7 +40,7 @@ public class FS006 extends TestBaseClass {
 		
 		//Step 4
 		signUpPage.googleButton.click();
-		GooglePage1  googlePage= new GooglePage1(driver);
+		GooglePage  googlePage= new GooglePage(driver);
 	    BrowserUtils.waitForVisibility(googlePage.email, 4);
 		googlePage.email.sendKeys(Configuration.getProperty("googleuser"));
 		googlePage.nextEmail.click();

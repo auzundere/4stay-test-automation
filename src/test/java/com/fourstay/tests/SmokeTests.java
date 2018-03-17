@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
 import com.fourstay.pages.FacebookPage;
-import com.fourstay.pages.GooglePage1;
+import com.fourstay.pages.GooglePage;
 import com.fourstay.pages.HomePage;
 import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;

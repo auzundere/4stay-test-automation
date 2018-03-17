@@ -5,7 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
-import com.fourstay.pages.GooglePage1;
+import com.fourstay.pages.GooglePage;
 import com.fourstay.pages.HomePage;
 import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.Configuration;
@@ -52,7 +52,7 @@ public class FS005 extends TestBaseClass{
 		//Click "Continue with Google" button
 		signUpPage.googleButton.click();
 		//verify we are at the google login page
-		GooglePage1 googlePage = new GooglePage1(driver);
+		GooglePage googlePage = new GooglePage(driver);
 		//verify the title of the page is "Sign in - Google Accounts"
 		assertTrue(googlePage.isAt());
 		
