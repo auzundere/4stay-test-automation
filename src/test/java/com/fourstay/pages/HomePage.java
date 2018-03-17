@@ -15,6 +15,7 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
+	// Hello Everyone -Handan!
 	@FindBy(xpath = "//div[@id='top-navbar']/ul/li[3]/a")
 	// 1
 	public WebElement signUp;
@@ -54,7 +55,7 @@ public class HomePage {
 	@FindBy(xpath = "//div[@class='btn email-btn w-100 m-0 mb-3']")
 	public WebElement continueWithEmail_button;
 	                
-	@FindBy(xpath="//input[@ng-class='{selected: selectedPlace}']")
+	@FindBy(xpath="//input[@placeholder='Where are you going? (type your city, college, or metro)']")
 	public WebElement searchBox;
 	
 	@FindBy(xpath = "//button[@class='btn search-btn']")

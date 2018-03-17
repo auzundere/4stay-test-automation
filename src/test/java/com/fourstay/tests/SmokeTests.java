@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
@@ -60,14 +61,22 @@ public class SmokeTests extends TestBaseClass {
 		
 		
 		//step 6
-		BrowserUtils.waitForVisibility(homePage.searchBox, 4);
+		
 		assertTrue(homePage.searchBox.isDisplayed());
 		homePage.searchBox.sendKeys(("Seattle WA,USA")+Keys.ARROW_DOWN,Keys.ENTER);
 		BrowserUtils.waitForVisibility(homePage.searchBox, 4);
-
+		//homePage.searchBox.sendKeys(("Seattle"));
+		Actions actions = new Actions(driver);
+		actions.sendKeys(homePage.searchBox, "Seattle").perform();
+		//
+		//BrowserUtils.waitForVisibility(homePage.searchBox, 4);
 		
-
-		homePage.searchButton.click();
+		actions.click(homePage.searchBox).perform();
+		actions.sendKeys(homePage.searchBox,Keys.DOWN).perform();
+		actions.sendKeys(homePage.searchBox,Keys.ENTER).perform();
+		actions.click(homePage.searchButton).perform();
+		Thread.sleep(500);
+		homePage.searchBox.sendKeys(Keys.ENTER);
 	//	System.out.println(driver.getTitle());
 		assertTrue(driver.getTitle().contains("Seattle"));
 
