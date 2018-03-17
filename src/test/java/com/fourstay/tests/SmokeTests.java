@@ -60,10 +60,10 @@ public class SmokeTests extends TestBaseClass {
 		
 		
 		//step 6
-		
+		BrowserUtils.waitForVisibility(homePage.searchBox, 4);
 		assertTrue(homePage.searchBox.isDisplayed());
-		homePage.searchBox.sendKeys(("Seattle")+Keys.ARROW_DOWN,Keys.ENTER);
-		
+		homePage.searchBox.sendKeys(("Seattle WA,USA")+Keys.ARROW_DOWN,Keys.ENTER);
+		BrowserUtils.waitForVisibility(homePage.searchBox, 4);
 
 		
 

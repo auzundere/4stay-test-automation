@@ -53,8 +53,8 @@ public class HomePage {
 	// button "Continue with Email", lilac
 	@FindBy(xpath = "//div[@class='btn email-btn w-100 m-0 mb-3']")
 	public WebElement continueWithEmail_button;
-	
-	@FindBy(xpath="//input[@class='search-input ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty']")
+	                
+	@FindBy(xpath="//input[@ng-class='{selected: selectedPlace}']")
 	public WebElement searchBox;
 	
 	@FindBy(xpath = "//button[@class='btn search-btn']")
