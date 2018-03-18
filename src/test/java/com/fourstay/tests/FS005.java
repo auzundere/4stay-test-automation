@@ -3,11 +3,13 @@ package com.fourstay.tests;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 
 import com.fourstay.pages.GooglePage;
 import com.fourstay.pages.HomePage;
 import com.fourstay.pages.SignUpPage;
+import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
@@ -57,29 +59,28 @@ public class FS005 extends TestBaseClass{
 		assertTrue(googlePage.isAt());
 		
 		//Step 5
-		//Enter Google account username
-		googlePage.EmailOrPhone.sendKeys(Configuration.getProperty("googleuser"));
-		//Click on NextButton
-		googlePage.NextButton.click();
-		//Enter Google account password 
-		googlePage.Password.sendKeys(Configuration.getProperty("googlepass"));
+		BrowserUtils.waitForVisibility(googlePage.email, 4);
+		googlePage.email.sendKeys("celepogluselami99@gmail.com");
+		googlePage.nextEmail.click();
+		//Enter password and click next
+        BrowserUtils.waitForVisibility(googlePage.password, 4);
+		//it will be the password
+		googlePage.password.sendKeys("212252Sc");
+		googlePage.nextPassword.click();
+		
+		//Step 6
+		assertTrue(signUpPage.guestButton.isDisplayed());
+		signUpPage.guestButton.click();
+		signUpPage.nextButton.click();
+		assertTrue(signUpPage.changeProfileImageButton.isDisplayed());
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//step 7
+		signUpPage.saveButton.click();
+		assertTrue(signUpPage.saveButton.isDisplayed());
 		
 		
 		
 		
 	}
-	
 }
