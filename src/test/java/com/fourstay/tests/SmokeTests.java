@@ -75,7 +75,7 @@ public class SmokeTests extends TestBaseClass {
 		actions.sendKeys(homePage.searchBox,Keys.DOWN).perform();
 		actions.sendKeys(homePage.searchBox,Keys.ENTER).perform();
 		actions.click(homePage.searchButton).perform();
-		Thread.sleep(500);
+		Thread.sleep(1200);
 		homePage.searchBox.sendKeys(Keys.ENTER);
 	//	System.out.println(driver.getTitle());
 		assertTrue(driver.getTitle().contains("Seattle"));

@@ -18,7 +18,7 @@ import com.fourstay.utilities.TestBaseClass;
 public class FS001 extends TestBaseClass{
 	
 	@Test 
-	public void Test1() {
+	public void Test1() throws InterruptedException {
 		driver.get(Configuration.getProperty("url"));
 		
 		//Step 1
@@ -105,6 +105,7 @@ public class FS001 extends TestBaseClass{
 		//enter email address
 		//generate a gmail
 		String email = BrowserUtils.getSaltString() + "@gmail.com";
+		Thread.sleep(2000);
 		signUpPage.emailAddess.clear();
 		signUpPage.emailAddess.sendKeys(email);
 		//enter occupation/school
