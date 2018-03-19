@@ -100,7 +100,7 @@ public class FS002 extends TestBaseClass{
 		signUpPage.hostButton.click();
 		
 
-	   //Step 6
+	   //Step 7
 	   String email = BrowserUtils.getSaltString() + "@gmail.com";
 	  // BrowserUtils.waitForVisibility(homePage.successful, 4);
 	   signUpPage.emailAddess.clear();
