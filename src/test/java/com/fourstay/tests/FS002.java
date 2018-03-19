@@ -20,7 +20,7 @@ public class FS002 extends TestBaseClass{
      * This website accepts only 1 time registration and when you have registered the account, 
      * and try to use same credentials, 
      * it is just logging in. 
-     * It is not using the registration page any more.
+     * It is NOT using the registration page any more.
      * Which is if you really create a new account, 
      * it tests that part, and if you have already once, 
      * it will skip those steps in my current try catch block,
@@ -75,15 +75,14 @@ public class FS002 extends TestBaseClass{
 		//Step 5
 		// Enter facebook account credentials and click login 
 		facebookPage.email.sendKeys(Configuration.getProperty("facebookuserhost"));
-		//facebookPage.email.sendKeys("huseyin.tekin99@gmail.com"); 
-		facebookPage.pass.sendKeys(Configuration.getProperty("facebookpasshost"));
-		//facebookPage.pass.sendKeys("Hht7084245.");
+	    facebookPage.pass.sendKeys(Configuration.getProperty("facebookpasshost"));
 		facebookPage.u_0_0.click();
+		BrowserUtils.waitForVisibility(homePage.successful, 4);
 
 	    try {
 			//BrowserUtils.waitForVisibility(signUpPage.h5IwantToBe, 4);
 			assertTrue(signUpPage.h5IwantToBe.isDisplayed());
-		}catch(AssertionError e) {
+		}catch(AssertionError e) { 
 			//verify home page loaded(the left top corner logo is displayed)
 			assertTrue(homePage.logo.isDisplayed());
 			//verify pop-up text "Successfully authenticated." is displayed
@@ -91,7 +90,7 @@ public class FS002 extends TestBaseClass{
 			assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 			//verify "Log Out" text is appeared
 			assertTrue(homePage.logOut.isDisplayed());
-			return;
+			return;   
 		}
 	    
 	    // =======================================================================
@@ -101,8 +100,9 @@ public class FS002 extends TestBaseClass{
 		signUpPage.hostButton.click();
 		
 
-	   //Step 7
+	   //Step 6
 	   String email = BrowserUtils.getSaltString() + "@gmail.com";
+	  // BrowserUtils.waitForVisibility(homePage.successful, 4);
 	   signUpPage.emailAddess.clear();
 	   signUpPage.emailAddess.sendKeys(email);
 	   //enter occupation/school
@@ -123,8 +123,7 @@ public class FS002 extends TestBaseClass{
 		assertTrue(homePage.logo.isDisplayed());
 	   // verify pop-up text "Successfully authenticated." is displayed
 		assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
-		// verify "Log Out" text is appeared
-		assertTrue(homePage.logOut.isDisplayed());
+		
 				
 	}
 }
