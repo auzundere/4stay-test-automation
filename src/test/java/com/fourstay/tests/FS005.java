@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.fourstay.pages.GooglePage;
 import com.fourstay.pages.HomePage;
@@ -18,6 +19,7 @@ public class FS005 extends TestBaseClass{
 	@Test 
 	public void Test5() {
 		driver.get(Configuration.getProperty("url"));
+		SoftAssert softAssert = new SoftAssert();
 		
 		//Step 1
 		HomePage homePage = new HomePage(driver);
@@ -76,11 +78,19 @@ public class FS005 extends TestBaseClass{
 		
 		
 		//step 7
+		signUpPage.emailAddess.sendKeys("");
+		BrowserUtils.waitForClickablility(signUpPage.occupationOrSchool, 5);
+		// title before clicking save button
+		String titleBefore = driver.getTitle();
+		// 2) Click Save button
+		//**regPage.saveButton.click();
 		signUpPage.saveButton.click();
-		assertTrue(signUpPage.saveButton.isDisplayed());
+		BrowserUtils.waitForClickablility(signUpPage.saveButton, 3);
 		
+		// title after clicking save button
+		String titleAfter = driver.getTitle();
 		
-		
+		softAssert.assertEquals(titleBefore, titleAfter, "button Savedoes not work properly");
 		
 	}
 }
