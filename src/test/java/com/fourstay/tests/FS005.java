@@ -3,7 +3,6 @@ package com.fourstay.tests;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
