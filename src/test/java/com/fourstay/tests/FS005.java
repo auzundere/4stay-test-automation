@@ -62,12 +62,12 @@ public class FS005 extends TestBaseClass{
 		
 		//Step 5
 		BrowserUtils.waitForVisibility(googlePage.email, 4);
-		googlePage.email.sendKeys("celepogluselami99@gmail.com");
+		googlePage.email.sendKeys(Configuration.getProperty("googlefs005user"));
 		googlePage.nextEmail.click();
 		//Enter password and click next
         BrowserUtils.waitForVisibility(googlePage.password, 4);
 		//it will be the password
-		googlePage.password.sendKeys("212252Sc");
+		googlePage.password.sendKeys(Configuration.getProperty("googlefs005pass"));
 		googlePage.nextPassword.click();
 		
 		//Step 6
