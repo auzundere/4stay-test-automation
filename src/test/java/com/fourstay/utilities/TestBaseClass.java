@@ -28,7 +28,7 @@ public class TestBaseClass{
 	public void tearDown() throws InterruptedException {
 		//driver.quit();
 		//Thread.sleep(500);
-		Driver.quit();
+		//Driver.quit();
 	}	
 	public static String getOnlyDigits(String str) {
 		String result ="";

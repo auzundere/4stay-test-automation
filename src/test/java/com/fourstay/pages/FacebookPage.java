@@ -28,9 +28,9 @@ public class FacebookPage {
 	@FindBy(xpath="//input[@name='login']") 
 	public WebElement u_0_0; //facebook login button
 	
-//	@FindBy(xpath="//button[@class='_42ft _4jy0 layerConfirm _1fm0 _51_n autofocus _4jy3 _4jy1 selected _51sy']")
-//	public WebElement continueAs;
-	
+	@FindBy(xpath="//button[@name='__CONFIRM__']") 
+	public WebElement continueAs; //facebook Continue as [First name of Facebook Account owner]
+		
 	@FindBy(xpath="//div[@class='fb_content clearfix']")
 	public WebElement textInfo;
 	
