@@ -17,7 +17,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
+
+
 public class BrowserUtils {
+	
+	public static WebElement highlightElement(WebElement elem) {
+	
+	    // draw a border around the found element
+	    if (driver instanceof JavascriptExecutor) {
+	        ((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid red'", elem);
+	    }
+	    return elem;
+	}
+	
 	public static List<String> getElementsText(By locator) {
 
 		List<WebElement> list = driver.findElements(locator);
