@@ -27,7 +27,7 @@ public class SignUpPage {
 	@FindBy(xpath="//div[@class='btn email-btn w-100 m-0 mb-3']")
 	public WebElement emailButton;
 	
-	@FindBy(xpath="//a[@class='login-link ml-auto align-self-start p-4']")
+	@FindBy(xpath="//div[@class='logo animated fadeInDown ml-auto mr-auto']")
 	public WebElement loginText;
 	
 	@FindBy(xpath="//a[@ui-sref='sign-up.more-options']")

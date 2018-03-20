@@ -47,6 +47,7 @@ public class FS002 extends TestBaseClass{
 		homePage.signUp.click();
 		SignUpPage signUpPage = new SignUpPage(driver);
 		// verify login text-link on the sign up page is displayed
+		
 		assertTrue(signUpPage.loginText.isDisplayed());
 		//verify the current URL is "https://4stay.com/sign-up#!/onboarding"
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/onboarding");
@@ -90,6 +91,7 @@ public class FS002 extends TestBaseClass{
 			assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 			//verify "Log Out" text is appeared
 			assertTrue(homePage.logOut.isDisplayed());
+			System.out.println("Test Case FS002 is passed");
 			return;   
 		}
 	    
@@ -123,7 +125,7 @@ public class FS002 extends TestBaseClass{
 		assertTrue(homePage.logo.isDisplayed());
 	   // verify pop-up text "Successfully authenticated." is displayed
 		assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
-		
+		System.out.println("Test Case FS002 is passed");
 				
 	}
 }

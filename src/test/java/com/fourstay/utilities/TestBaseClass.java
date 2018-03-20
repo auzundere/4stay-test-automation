@@ -14,20 +14,21 @@ public class TestBaseClass{
 	
 	protected static WebDriver driver;
 	
-	@BeforeMethod
-	@BeforeClass(alwaysRun=true)
+	@BeforeMethod(alwaysRun=true)
 	@Parameters("browser")
 	public void setUp(@Optional String browser) {
 		driver=Driver.getDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.switchTo().window(driver.getWindowHandle());
+		//driver.manage().window().fullscreen();
 		driver.get(Configuration.getProperty("url"));
 	}
 
-	@AfterMethod
-	@AfterClass(alwaysRun=true)
-	public void tearDown() {
+	@AfterMethod(alwaysRun=true)
+	public void tearDown() throws InterruptedException {
 		//driver.quit();
-		//Driver.quit();
+		//Thread.sleep(500);
+		Driver.quit();
 	}	
 	public static String getOnlyDigits(String str) {
 		String result ="";

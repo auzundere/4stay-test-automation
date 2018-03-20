@@ -9,7 +9,14 @@ import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
-
+/**
+ * 
+ * This test case ... 
+ * 
+ * 
+ * 
+ * 
+ */
 public class FS004 extends TestBaseClass{
 	
 	@Test 
@@ -73,6 +80,7 @@ public class FS004 extends TestBaseClass{
 					assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 					//verify "Log Out" text is appeared
 					assertTrue(homePage.logOut.isDisplayed());
+					System.out.println("Test Case FS004 is passed");
 					return;
 				}
 				//verify "Host" button is displayed
@@ -121,6 +129,7 @@ public class FS004 extends TestBaseClass{
 				assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 				//verify "Log Out" text is appeared
 				assertTrue(homePage.logOut.isDisplayed());
+				System.out.println("Test Case FS0041 is passed");
 		
 	}
 	

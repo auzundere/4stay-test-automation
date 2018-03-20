@@ -85,6 +85,7 @@ public class FS001 extends TestBaseClass{
 			assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 			//verify "Log Out" text is appeared
 			assertTrue(homePage.logOut.isDisplayed());
+			System.out.println("Test Case FS001 is passed");
 			return;
 		}
 		//verify "Host" button is displayed
@@ -128,6 +129,7 @@ public class FS001 extends TestBaseClass{
 		assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 		//verify "Log Out" text is appeared
 		assertTrue(homePage.logOut.isDisplayed());
+		System.out.println("Test Case FS001 is passed");
 	}
 	
 }

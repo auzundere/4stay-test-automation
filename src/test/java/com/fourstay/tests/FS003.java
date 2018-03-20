@@ -17,9 +17,9 @@ import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
-public class FS003 extends TestBaseClass{
-	
-	@Test 
+public class FS003 extends TestBaseClass {
+
+	@Test
 	public void Test3() throws InterruptedException {
 		driver.get(Configuration.getProperty("url"));
 		SoftAssert softAssert = new SoftAssert();
@@ -164,5 +164,5 @@ public class FS003 extends TestBaseClass{
 						softAssert.assertEquals(titleBefore, titleAfter, "button Savedoes not work properly");
 						
 	}
-	
+
 }
