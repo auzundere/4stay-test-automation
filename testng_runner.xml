@@ -1,8 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="4 Stay Smoke Test" verbose="2">
-	<test name="Automated tests">
+<suite name="4 Stay Suite Functional and Smoke Tests" verbose="2">
+	<test name="Smoke test">
 		<classes>
 			<class name="com.fourstay.tests.SmokeTests"></class>
+		</classes>
+	</test>
+	<test name="Functional Tests">
+		<classes>
+			<class name="com.fourstay.tests.FS001"></class>
+			<class name="com.fourstay.tests.FS002"></class>
+			<class name="com.fourstay.tests.FS003"></class>
+			<class name="com.fourstay.tests.FS004"></class>
+			<class name="com.fourstay.tests.FS005"></class>
+			<class name="com.fourstay.tests.FS006"></class>
 		</classes>
 	</test>
 </suite>
