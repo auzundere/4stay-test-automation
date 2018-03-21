@@ -42,7 +42,7 @@ public class BrowserUtils {
 		return links;
 	}
 
-	public static String getSaltString() {
+	public static String generateEmail() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
@@ -51,7 +51,7 @@ public class BrowserUtils {
             salt.append(SALTCHARS.charAt(index));
         }
         String saltStr = salt.toString();
-        return saltStr;
+        return saltStr + "@abcdef.com";
 
     }
 	

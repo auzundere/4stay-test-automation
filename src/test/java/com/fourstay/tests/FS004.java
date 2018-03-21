@@ -9,7 +9,14 @@ import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
-
+/**
+ * 
+ * This test case ... 
+ * 
+ * 
+ * 
+ * 
+ */
 public class FS004 extends TestBaseClass{
 	
 	@Test 
@@ -93,7 +100,7 @@ public class FS004 extends TestBaseClass{
 				
 				//Step 7
 				//enter gmail address by generating it
-				String email = BrowserUtils.getSaltString() + "@gmail.com";
+				String email = BrowserUtils.generateEmail();
 				signUpPage.emailAddess.click();
 				signUpPage.emailAddess.clear();
 				signUpPage.emailAddess.sendKeys(email);

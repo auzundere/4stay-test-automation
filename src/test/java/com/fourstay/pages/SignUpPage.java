@@ -33,6 +33,30 @@ public class SignUpPage {
 	@FindBy(xpath="//a[@ui-sref='sign-up.more-options']")
 	public WebElement moreOptions;
 	
+	/**
+	 * Basic Information for registration STARTS HERE
+	*/
+	
+	@FindBy(xpath="//input[@id='first-name']")
+	public WebElement firstName;
+	
+	@FindBy(xpath="//input[@id='last-name']")
+	public WebElement lastName;
+	
+	@FindBy(xpath="//input[@id='email']")
+	public WebElement emailAddess;
+	
+	@FindBy(xpath="//input[@id='password']")
+	public WebElement password;
+	
+	@FindBy(xpath="//button[.='Sign up']")
+	public WebElement signUpButton;
+	
+	/**
+	 * Basic Information for registration ENDS HERE
+	*/
+	
+	
 	@FindBy(tagName="h5")
 	public WebElement h5IwantToBe;
 	
@@ -47,9 +71,6 @@ public class SignUpPage {
 	
 	@FindBy(xpath="//div[@class='md-form d-flex flex-row justify-content-center file-field']//span")
 	public WebElement changeProfileImageButton;
-	
-	@FindBy(xpath="//input[@ng-model='vm.user.email']")
-	public WebElement emailAddess;
 	
 	@FindBy(xpath="//input[@ng-model='vm.user.occupation_or_school']")
 	public WebElement occupationOrSchool;

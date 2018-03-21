@@ -135,7 +135,7 @@ public class FS001Demo extends TestBaseClass{
 		//Step 7
 		//enter email address
 		//generate a gmail
-		String email = BrowserUtils.getSaltString() + "@gmail.com";
+		String email = BrowserUtils.generateEmail();
 		Thread.sleep(2000);
 		signUpPage.emailAddess.clear();
 		signUpPage.emailAddess.sendKeys(email);
