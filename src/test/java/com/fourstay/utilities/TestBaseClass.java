@@ -19,7 +19,7 @@ public class TestBaseClass{
 	public void setUp(@Optional String browser) {
 		driver=Driver.getDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		//driver.switchTo().window(driver.getWindowHandle());
+		driver.switchTo().window(driver.getWindowHandle());
 		//driver.manage().window().fullscreen();
 		driver.get(Configuration.getProperty("url"));
 	}

@@ -32,7 +32,5 @@ public class FS016 extends TestBaseClass{
 				//verify "Please type your city, college, or metro" is displayed
 				String actual=homePage.popUpPleaseEnter.getText();
 				assertEquals(actual,"Please type your city, college, or metro");
-				
-
-}
+	}
 }

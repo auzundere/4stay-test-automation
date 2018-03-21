@@ -191,9 +191,24 @@ public class FS007 extends TestBaseClass{
 		//Enter security deposit up to $500
 		dashboardPage.securityDeposit.sendKeys((rand.nextInt(10))*50+"");
 		//Select minimum stay in month
-		//dashboardPage.minimumStay.get(rand.nextInt(dashboardPage.minimumStay.size()-1)+1);
-		//Thread.sleep(500);
-		//dashboardPage.saveButton.click();
+		dashboardPage.minimumStay.get(rand.nextInt(dashboardPage.minimumStay.size()-1)+1).click();
+		dashboardPage.saveButton.click();
+		Thread.sleep(4000);
+		count = 1;
+		while(count<8){
+			dashboardPage.uploadPhotos.sendKeys(System.getProperty("user.dir") + "/src/test/resources/img/hp"+count+".jpg");
+			count++;
+		}
+		Thread.sleep(4000);
+		dashboardPage.reviewButton.click();
+		dashboardPage.publishButton.click();
+		dashboardPage.acceptPublishingButton.click();
+		Thread.sleep(3000);
+		for(WebElement element: dashboardPage.topMenuElements ) {
+			assertTrue(element.isDisplayed(),element.getText() + " was not displayed!");
+		}
+		
+		assertTrue(dashboardPage.addAStayButton.isDisplayed(),"ADD A STAY button was not displayed!");
 	}
 	
 	public static void clickElements(int totalSize, int numberofElementSelect, List<WebElement> element, int startIndex) {

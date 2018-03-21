@@ -119,15 +119,35 @@ public class DashboardPage {
 	@FindBy(xpath="//button[.='SEE WHAT YOU MISSED']")
 	public WebElement seeWhatYouMissedButton;
 	
+	@FindBy(xpath="//button[.='NEXT']")
+	public WebElement nextButton;
+	
 	@FindBy(xpath="(//th[@class='next available'])[3]")
 	public WebElement calendarRightNextMonthArrow;
 	
 	@FindBy(xpath="//button[.='SAVE']")
 	public WebElement saveButton;
 	
+	@FindBy(xpath="//input[@multiple='multiple']")
+	public WebElement uploadPhotos;
 	
-	@FindBy(xpath="//button[.='NEXT']")
-	public WebElement nextButton;
+	@FindBy(xpath="//button[.='REVIEW']")
+	public WebElement reviewButton;
+	
+	@FindBy(xpath="//button[.='PUBLISH']")
+	public WebElement publishButton;
+	
+	@FindBy(xpath="//span[.='Yes']")
+	public WebElement acceptPublishingButton;
+	
+	@FindBy(xpath="//div[@class='owl-stage-outer']//a[not(contains(@ui-sref,'dashboard.admin'))]")
+	public List<WebElement> topMenuElements;
+	
+	@FindBy(xpath="//a[.='ADD A STAY']")
+	public WebElement addAStayButton;
+	
+	
+
 	
 	
 	
