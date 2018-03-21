@@ -9,14 +9,7 @@ import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
-/**
- * 
- * This test case ... 
- * 
- * 
- * 
- * 
- */
+
 public class FS004 extends TestBaseClass{
 	
 	@Test 

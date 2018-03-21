@@ -38,6 +38,10 @@ public class GooglePage {
 	@FindBy(xpath="(//input[@class='whsOnd zHQkBf'])[1]")
 	public WebElement Password;
 	
+	//Terms and Conditions link
+	@FindBy(xpath="//a[@class='ml-1']")
+	public WebElement termsAndConditions;
+	
 	public boolean isAt() {
 		return driver.getTitle().equals("Sign in - Google Accounts");
 	}
