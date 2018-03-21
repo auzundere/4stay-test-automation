@@ -64,5 +64,8 @@ public class HomePage {
 	@FindBy(xpath = "//button[@class='btn search-btn']")
 	public WebElement searchButton;
 	
+	@FindBy(xpath="//div[@class='tooltip-inner']")
+	public WebElement popUpPleaseEnter;
+	
 
 }

@@ -15,7 +15,7 @@ import com.fourstay.utilities.TestBaseClass;
 public class FS010 extends TestBaseClass{
 	
 	@Test 
-	public void Test10() {
+	public void Test010() {
 		//Launch the browser and navigate to www.4stay.com
 		driver.get(Configuration.getProperty("url"));
 		
@@ -64,7 +64,7 @@ public class FS010 extends TestBaseClass{
 				//title after clicking the save button
 				String titleAfterSave = driver.getTitle();
 				//verify both titles are same
-				assertEquals(titleBeforeSave, titleAfterSave,"Fields are empty can not save!");
+				assertEquals(titleBeforeSave, titleAfterSave,"Fields are empty, can not save!");
 			
 	}
 }
