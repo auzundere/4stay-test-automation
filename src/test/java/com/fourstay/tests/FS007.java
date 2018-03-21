@@ -24,7 +24,7 @@ import com.fourstay.utilities.TestBaseClass;
 public class FS007 extends TestBaseClass{
 	
 	@Test 
-	public void Test1() throws InterruptedException {
+	public void Test7() throws InterruptedException {
 		driver.get(Configuration.getProperty("url"));
 		
 		//Step 1
