@@ -175,7 +175,15 @@ public class FS007 extends TestBaseClass{
 		dashboardPage.availableDateFrom.click();
 		String idx1 = (rand.nextInt(2)+5) +"";
 		String idx2 = (rand.nextInt(7)+1) +"";
-		driver.findElement(By.xpath("//div[@class='calendar-table']//tbody/tr["+idx1+"]/td["+idx2+"]")).click();
+		driver.findElement(By.xpath("(//div[@class='calendar-table']//tbody/tr["+idx1+"]/td["+idx2+"])[1]")).click();
+		dashboardPage.availableDateTo.click();
+		int count = 0;
+		while(count<8){
+			//Thread.sleep(1000);
+			dashboardPage.calendarRightNextMonthArrow.click();
+			count++;
+		}
+		driver.findElement(By.xpath("(//div[@class='calendar-table']//tbody/tr["+idx1+"]/td["+idx2+"])[3]")).click();
 		//click NEXT
 		dashboardPage.nextButton.click();
 		//Enter rent per month between $900 and $2500

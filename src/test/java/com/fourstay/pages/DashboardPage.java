@@ -101,9 +101,11 @@ public class DashboardPage {
 	@FindBy(xpath="//textarea[@ng-model='vm.listing.description']")
 	public WebElement mainStayDescription;
 	
-	@FindBy(xpath="//div[@id='stay-date-from']")
+	@FindBy(xpath="//div[@ng-model='vm.listing.availability_details.dates.startDate']")
 	public WebElement availableDateFrom;
 	
+	@FindBy(xpath="//div[@ng-model='vm.listing.availability_details.dates.endDate']")
+	public WebElement availableDateTo;
 	
 	@FindBy(xpath="//input[@ng-model='vm.listing.availability_details.price_per_month']")
 	public WebElement pricePerMonth;
@@ -116,6 +118,9 @@ public class DashboardPage {
 	
 	@FindBy(xpath="//button[.='SEE WHAT YOU MISSED']")
 	public WebElement seeWhatYouMissedButton;
+	
+	@FindBy(xpath="(//th[@class='next available'])[3]")
+	public WebElement calendarRightNextMonthArrow;
 	
 	@FindBy(xpath="//button[.='SAVE']")
 	public WebElement saveButton;
