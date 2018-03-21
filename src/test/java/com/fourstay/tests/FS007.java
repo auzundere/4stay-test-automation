@@ -76,8 +76,7 @@ public class FS007 extends TestBaseClass{
 		
 		//Step 5
 		//Fill aout the fields
-		String email ="muzundere82@gmail.com";
-		//String email = BrowserUtils.generateEmail().toLowerCase();
+		String email = BrowserUtils.generateEmail().toLowerCase();
 		signUpPage.firstName.sendKeys(Configuration.getProperty("firstname"));
 		signUpPage.lastName.sendKeys(Configuration.getProperty("lastname"));
 		signUpPage.emailAddess.sendKeys(email);
