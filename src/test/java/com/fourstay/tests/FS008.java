@@ -64,7 +64,7 @@ public class FS008 extends TestBaseClass {
 		Thread.sleep(3000);
 		alert.accept();
 		// ---------------------
-		assertTrue(homePage.logo.isDisplayed());
+		assertTrue(homePage.logo.isDisplayed(), "logo");
 		// *verify that home page loaded correctly: URL of loaded page is equal to
 		// expected URL.
 		softAssert.assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
@@ -85,8 +85,7 @@ public class FS008 extends TestBaseClass {
 		}
 		// System.out.println("++ "+d2_titles_str.contains("Rent medium to long-term
 		// furnished stays today!"));
-		softAssert.assertTrue((d2_titles_str.contains("Rent medium to long-term furnished stays today!")),
-				"Text'Rent medium to long-term furnished stays today!'  does not find on the page");
+		softAssert.assertTrue((d2_titles_str.contains("Rent medium to long-term furnished stays today!")), "Text'Rent medium to long-term furnished stays today!'  does not find on the page");
 
 		// --Step 2-- Click the SIGN UP to navigate to Sign-Up page.
 		homePage.signUp.click();
@@ -151,7 +150,7 @@ public class FS008 extends TestBaseClass {
 		signUpPage.emailButton.click();
 		BrowserUtils.waitForPageToLoad(2);
 
-		softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/sign-up#!/basic-information"));
+		softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/sign-up#!/basic-information"), "problem 5");
 		// ------------------
 		((JavascriptExecutor) driver)
 				.executeScript("alert('URL of this page is equal to *https://fourstay-staging.herokuapp.com/sign-up#!/basic-information*')");
@@ -249,9 +248,9 @@ public class FS008 extends TestBaseClass {
 		signUpPage.saveButton.click();
 		BrowserUtils.waitForPageToLoad(2);
 
-		softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/"));
+		//softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/"), "problem 6");
 
-		softAssert.assertTrue(homePage.label_h2.getText().equals("Rent medium to long-term furnished stays today!"));
+		softAssert.assertTrue(homePage.label_h2.getText().equals("Rent medium to long-term furnished stays today!"), "problem 7");
 		softAssert.assertTrue(homePage.logOut.isDisplayed());
 
 		// ---------------------
