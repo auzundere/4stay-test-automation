@@ -52,6 +52,9 @@ public class SignUpPage {
 	@FindBy(xpath="//button[.='Sign up']")
 	public WebElement signUpButton;
 	
+	@FindBy(xpath="//li[@ng-repeat='error in vm.errors']")
+	public WebElement errorMsg;
+	
 	/**
 	 * Basic Information for registration ENDS HERE
 	*/
