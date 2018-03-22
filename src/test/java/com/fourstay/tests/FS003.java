@@ -144,7 +144,7 @@ public class FS003 extends TestBaseClass {
 //		              
 						
 						//**regPage.emailAddress.sendKeys("ivan.Tesla@gmail.com");
-						signUpPage.emailAddess.sendKeys("");
+						signUpPage.emailFacebook.sendKeys("");
 						BrowserUtils.waitForClickablility(signUpPage.occupationOrSchool, 5);
 						//Thread.sleep(500);
 						//**regPage.occupation.sendKeys("Bysiness Analyst");
@@ -162,6 +162,8 @@ public class FS003 extends TestBaseClass {
 						String titleAfter = driver.getTitle();
 						
 						softAssert.assertEquals(titleBefore, titleAfter, "button Savedoes not work properly");
+						
+						softAssert.assertAll();
 						
 	}
 

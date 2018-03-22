@@ -94,4 +94,11 @@ public class SignUpPage {
 	//add by Evgeniya
 	@FindBy(xpath="//label[contains(text(),'Occupation/School')]")
 	public WebElement labelOccupation;
+	
+	@FindBy(xpath="//input[@id='email']")
+	public WebElement emailStr;
+	
+	@FindBy(xpath="//input[@ng-model='vm.user.email']")
+	public WebElement emailFacebook;
+	
 }

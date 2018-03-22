@@ -31,6 +31,9 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[@rel='nofollow']")
 	public WebElement logOut;
+	
+	@FindBy(tagName="h2")
+	public WebElement label_h2;
 
 	public boolean isAt() {
 		return driver.getTitle().equals("Room rental, roommate finder, off-campus housing, homestay | 4stay");
