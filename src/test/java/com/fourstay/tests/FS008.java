@@ -67,7 +67,7 @@ public class FS008 extends TestBaseClass {
 		assertTrue(homePage.logo.isDisplayed());
 		// *verify that home page loaded correctly: URL of loaded page is equal to
 		// expected URL.
-		softAssert.assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
+		softAssert.assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		// *verify that home page loaded correctly: Title of a loaded page is equal to
 		// expected title
 		softAssert.assertEquals(driver.getTitle(), "Room rental, roommate finder, off-campus housing, homestay | 4stay",
@@ -95,8 +95,8 @@ public class FS008 extends TestBaseClass {
 
 		// *verify that page loaded correctly: URL of loaded page is equal to expected
 		// URL.
-		softAssert.assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/onboarding",
-				"irl is not eqial to '//https://4stay.com/sign-up#!/onboarding'");
+		softAssert.assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/sign-up#!/onboarding",
+				"irl is not eqial to 'https://fourstay-staging.herokuapp.com/sign-up#!/onboarding'");
 
 		// *verify that page loaded correctly: Title of a loaded page is equal to
 		// expected title
@@ -111,8 +111,8 @@ public class FS008 extends TestBaseClass {
 
 		// *verify that page loaded correctly: URL of loaded page is equal to expected
 		// URL
-		softAssert.assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/more-options",
-				"irl is not eqial to 'https://4stay.com/sign-up#!/more-options'");
+		softAssert.assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/sign-up#!/more-options",
+				"irl is not eqial to 'https://fourstay-staging.herokuapp.com/sign-up#!/more-options'");
 
 		/*
 		 * Verify that the next buttons appears: 1) Continue with Facebook 2) Continue
@@ -151,10 +151,10 @@ public class FS008 extends TestBaseClass {
 		signUpPage.emailButton.click();
 		BrowserUtils.waitForPageToLoad(2);
 
-		softAssert.assertTrue(driver.getCurrentUrl().equals("https://4stay.com/sign-up#!/basic-information"));
+		softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/sign-up#!/basic-information"));
 		// ------------------
 		((JavascriptExecutor) driver)
-				.executeScript("alert('URL of this page is equal to *https://4stay.com/sign-up#!/basic-information*')");
+				.executeScript("alert('URL of this page is equal to *https://fourstay-staging.herokuapp.com/sign-up#!/basic-information*')");
 
 		Alert alert2 = driver.switchTo().alert();
 		Thread.sleep(3000);
@@ -249,7 +249,7 @@ public class FS008 extends TestBaseClass {
 		signUpPage.saveButton.click();
 		BrowserUtils.waitForPageToLoad(2);
 
-		softAssert.assertTrue(driver.getCurrentUrl().equals("https://4stay.com/"));
+		softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/"));
 
 		softAssert.assertTrue(homePage.label_h2.getText().equals("Rent medium to long-term furnished stays today!"));
 		softAssert.assertTrue(homePage.logOut.isDisplayed());
