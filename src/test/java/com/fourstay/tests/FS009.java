@@ -24,7 +24,7 @@ public class FS009 extends TestBaseClass{
 		// verify home page loaded(the left top corner logo is displayed)
 		assertTrue(homePage.logo.isDisplayed());
 		// verify the Current URL is "https://4stay.com/"
-		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
+		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		// verify the Home page title is "Room rental, roommate finder, off-campus
 		// housing, homestay | 4stay"
 		assertTrue(homePage.isAt());
@@ -36,7 +36,7 @@ public class FS009 extends TestBaseClass{
 
 		assertTrue(signUpPage.loginText.isDisplayed());
 		// verify the current URL is "https://4stay.com/sign-up#!/onboarding"
-		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/onboarding");
+		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/sign-up#!/onboarding");
 		// verify the Home page title is "Sign Up - Room rental, roommate finder,
 		// off-campus housing, homestay | 4stay"
 		assertTrue(signUpPage.isAt());
@@ -56,7 +56,7 @@ public class FS009 extends TestBaseClass{
 		signUpPage.emailButton.click();
 		// verify we are at the Email login page
 		// verify the current URL is "https://4stay.com/sign-up#!/basic-information"
-		assertTrue(driver.getCurrentUrl().equals("https://4stay.com/sign-up#!/basic-information"));
+		assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/sign-up#!/basic-information"));
 		//Verify "First name*" textbox is displayed
 		assertTrue(signUpPage.firstName.isDisplayed());
 		//Verify "First name*" textbox is displayed
