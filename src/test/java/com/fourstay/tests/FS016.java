@@ -15,8 +15,8 @@ public class FS016 extends TestBaseClass{
 		
 		//Step 1
 				HomePage homePage = new HomePage(driver);
-				//verify the Current URL is "https://4stay.com/"
-				assertEquals(driver.getCurrentUrl(),"https://4stay.com/");
+				//verify the Current URL is "https://fourstay-staging.herokuapp.com/"
+				assertEquals(driver.getCurrentUrl(),"https://fourstay-staging.herokuapp.com/");
 				//verify the Home page title is "Room rental, roommate finder, off-campus housing, homestay | 4stay"
 				assertTrue(homePage.isAt());
 				

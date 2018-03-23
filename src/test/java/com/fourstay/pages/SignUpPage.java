@@ -43,6 +43,10 @@ public class SignUpPage {
 	@FindBy(xpath="//input[@id='last-name']")
 	public WebElement lastName;
 	
+	//new xpath for new url 
+		@FindBy(xpath="//input[@ng-model='vm.user.email']")
+		public WebElement emailAddress;
+	
 	@FindBy(xpath="//input[@id='email']")
 	public WebElement emailAddess;
 	

@@ -25,9 +25,10 @@ public class FS004 extends TestBaseClass{
 		
 		//Step 1
 				HomePage homePage = new HomePage(driver);
-				//verify the Current URL is "https://4stay.com/"
-				assertEquals(driver.getCurrentUrl(),"https://4stay.com/");
+				//verify the Current URL is "https://fourstay-staging.herokuapp.com"
+				assertEquals(driver.getCurrentUrl(),"https://fourstay-staging.herokuapp.com/");
 				//verify the Home page title is "Room rental, roommate finder, off-campus housing, homestay | 4stay"
+				
 				assertTrue(homePage.isAt());
 				
 				//Step 2
@@ -37,9 +38,10 @@ public class FS004 extends TestBaseClass{
 				assertTrue(signUpPage.loginText.isDisplayed());
 				//verify More Options text on the sign up page is displayed
 				assertTrue(signUpPage.moreOptions.isDisplayed());
-				//verify the current URL is "https://4stay.com/sign-up#!/onboarding"
-				assertEquals(driver.getCurrentUrl(),"https://4stay.com/sign-up#!/onboarding");
+				//verify the current URL is "https://fourstay-staging.herokuapp.com/sign-up#!/onboarding"
+				assertEquals(driver.getCurrentUrl(),"https://fourstay-staging.herokuapp.com/sign-up#!/onboarding");
 				//verify the Home page title is "Sign Up - Room rental, roommate finder, off-campus housing, homestay | 4stay"
+				                                 
 				assertTrue(signUpPage.isAt());
 				
 				//Step 3
@@ -101,9 +103,9 @@ public class FS004 extends TestBaseClass{
 				//Step 7
 				//enter gmail address by generating it
 				String email = BrowserUtils.generateEmail();
-				signUpPage.emailAddess.click();
-				signUpPage.emailAddess.clear();
-				signUpPage.emailAddess.sendKeys(email);
+				signUpPage.emailAddress.click();
+				signUpPage.emailAddress.clear();
+				signUpPage.emailAddress.sendKeys(email);
 				//enter occupation/school
 				signUpPage.occupationOrSchool.click();
 				signUpPage.occupationOrSchool.clear();
@@ -129,7 +131,7 @@ public class FS004 extends TestBaseClass{
 				assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 				//verify "Log Out" text is appeared
 				assertTrue(homePage.logOut.isDisplayed());
-				System.out.println("Test Case FS0041 is passed");
+				System.out.println("Test Case FS004 is passed");
 		
 	}
 	
