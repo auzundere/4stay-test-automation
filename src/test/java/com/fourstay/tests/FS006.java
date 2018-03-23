@@ -21,7 +21,7 @@ public class FS006 extends TestBaseClass {
 
 		HomePage homePage = new HomePage(driver);
 		assertTrue(homePage.logo.isDisplayed());
-		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
+		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		assertTrue(homePage.isAt());
 
 		// Step 2
@@ -30,7 +30,7 @@ public class FS006 extends TestBaseClass {
 		BrowserUtils.waitForVisibility(signUpPage.loginText, 5);
 		assertTrue(signUpPage.loginText.isDisplayed());
 		assertTrue(signUpPage.moreOptions.isDisplayed());
-		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/onboarding");
+		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/sign-up#!/onboarding");
 		assertTrue(signUpPage.isAt());
 
 		// Step 3
