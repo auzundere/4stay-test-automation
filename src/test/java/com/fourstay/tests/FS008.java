@@ -64,6 +64,7 @@ public class FS008 extends TestBaseClass {
 		Thread.sleep(3000);
 		alert.accept();
 		// ---------------------
+		//-----
 		assertTrue(homePage.logo.isDisplayed(), "logo");
 		// *verify that home page loaded correctly: URL of loaded page is equal to
 		// expected URL.
