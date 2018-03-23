@@ -1,6 +1,6 @@
 package com.fourstay.tests;
 
-
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.Alert;
@@ -19,8 +19,7 @@ import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
-
-  public class FS014 extends TestBaseClass {
+public class FS014 extends TestBaseClass {
 
 	public static WebElement highlightElement(WebElement elem, String style) {
 
@@ -48,7 +47,7 @@ import com.fourstay.utilities.TestBaseClass;
 		HomePage homePage = new HomePage(driver);
 		// verify the Current URL is "https://4stay.com/"
 		highlightElement(homePage.logo, "purple");
-		((JavascriptExecutor) driver).executeScript("alert('Home page loaded: the left top corner logo is displayed')");
+		((JavascriptExecutor) driver).executeScript("alert('Home page loaded: The left top corner logo is displayed.')");
 
 		Alert alert = driver.switchTo().alert();
 		Thread.sleep(3000);
@@ -60,34 +59,38 @@ import com.fourstay.utilities.TestBaseClass;
 		softAssert.assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		// *verify that home page loaded correctly: Title of a loaded page is equal to
 		// expected title
-		softAssert.assertEquals(driver.getTitle(), "Room rental, roommate finder, off-campus housing, homestay | 4stay",
+		String titleBeforeEnterSpecialCharacter = driver.getTitle();
+		softAssert.assertEquals(titleBeforeEnterSpecialCharacter, "Room rental, roommate finder, off-campus housing, homestay | 4stay",
 				"(!)title not equal");
 
 		// Step 2
 		// Verify Search input field is on the home page
 		highlightElement(homePage.searchButton, "yellow");
-		Thread.sleep(200);
+		Thread.sleep(1000);
 
 		highlightElement(homePage.searchBox, "blue");
-		Thread.sleep(200);
+		Thread.sleep(1000);
 
 		// Step 3
 
 		// verify pop up appears
 		homePage.searchBox.click();
-		homePage.searchBox.sendKeys("@" + Keys.ENTER);
+		homePage.searchBox.sendKeys("12&3" + Keys.ENTER);
 		// flashElement(homePage.searchBox, "yellow");
-
-		try {
-			((JavascriptExecutor) driver)
-					.executeScript("alert('Do NOT enter special characters! Please search city, college, or metro");
-
-			Alert alert1 = driver.switchTo().alert();
-			Thread.sleep(2000);
-			alert.accept();
-		} catch (WebDriverException e) {
-			System.out.println("passed!");
+		for (int i = 0; i < homePage.searchBox.getAttribute("value").length(); i++) {
+			if (!Character.isDigit(homePage.searchBox.getAttribute("value").charAt(i))
+					&& !Character.isLetter(homePage.searchBox.getAttribute("value").charAt(i))) {
+				((JavascriptExecutor) driver).executeScript(
+						"alert('Do NOT enter special characters! Please search city, college, or metro.')");
+				Alert alert1 = driver.switchTo().alert();
+				Thread.sleep(5000);
+				alert1.accept();
+				break;
+			}
 		}
+
+		String titleAfterEnterSpecialCharacter = driver.getTitle();
+		assertEquals(titleBeforeEnterSpecialCharacter,titleAfterEnterSpecialCharacter,"We are not on the same page!");
 		// ---------------------
 
 		// Enter special characters as search input and click to Search button
@@ -97,4 +100,3 @@ import com.fourstay.utilities.TestBaseClass;
 	}
 
 }
-
