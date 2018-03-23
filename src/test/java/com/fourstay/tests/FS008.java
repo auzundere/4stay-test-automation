@@ -49,7 +49,7 @@ public class FS008 extends TestBaseClass {
 
 	@Test
 	public void Test8() throws InterruptedException {
-		driver.get(Configuration.getProperty("url"));
+		driver.get(Configuration.getProperty("urlFS008"));
 		SoftAssert softAssert = new SoftAssert();
 
 		// --Step 1--

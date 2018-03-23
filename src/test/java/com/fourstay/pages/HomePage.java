@@ -34,7 +34,10 @@ public class HomePage {
 	
 	@FindBy(tagName="h2")
 	public WebElement label_h2;
-
+	
+	@FindBy(linkText="LIST YOUR STAY")
+	public WebElement listYourStay;
+	
 	public boolean isAt() {
 		return driver.getTitle().equals("Room rental, roommate finder, off-campus housing, homestay | 4stay");
 
