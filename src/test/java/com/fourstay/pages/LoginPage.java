@@ -13,17 +13,20 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//input[@id='user_email']")
-	public WebElement email;
+	public WebElement user_email;
 	
-	@FindBy(xpath="//input[@id='user_password']")
-	public WebElement password;
+	public WebElement user_password;
 	
 	@FindBy(xpath="//a[.='Login with Facebook']")
 	public WebElement loginWithFacebook;
 	
 	@FindBy(xpath="//a[.='Login with Google']")
 	public WebElement loginWithGoogle;
+	
+	public WebElement login_btn;
+	
+	public WebElement login_status;
+	
 	
 	
 	

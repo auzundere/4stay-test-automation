@@ -37,8 +37,8 @@ public class SmokeTests extends TestBaseClass {
 		
 		homePage.loginLink.click();
 		BrowserUtils.waitForVisibility(loginPage.loginWithGoogle,1);
-		assertTrue(loginPage.email.getAttribute("placeholder").equals("Email address"));
-		assertTrue(loginPage.password.getAttribute("placeholder").equals("Password"));
+		assertTrue(loginPage.user_email.getAttribute("placeholder").equals("Email address"));
+		assertTrue(loginPage.user_password.getAttribute("placeholder").equals("Password"));
 		assertTrue(loginPage.loginWithFacebook.isDisplayed());
 		assertTrue(loginPage.loginWithGoogle.isDisplayed());
 
