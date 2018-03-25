@@ -18,6 +18,12 @@ public class HostPage {
 	@FindBy(xpath="//div[@class='icon private-room']")
 	public WebElement privateRoom;
 	
+	@FindBy(xpath="//div[@class='icon shared-room']")
+	public WebElement sharedRoom;
+	
+	@FindBy(xpath="//div[@class='icon entire-place']")
+	public WebElement entirePlace;
+	
 	@FindBy(xpath="//a[.='Stay Type']/../i")
 	public WebElement stayTypeMarker;
 	
@@ -44,6 +50,14 @@ public class HostPage {
 	
 	@FindBy(xpath ="//div[@class='icon female']")
 	public WebElement femaleIcon;
+	
+	@FindBy(id="wifi")
+	public WebElement wifi;
+	
+	@FindBy(id="cats_okay")
+	public WebElement catsOkay;
+	
+
 	
 	//--------------------------
 	
