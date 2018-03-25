@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HostPage {
 	private WebDriver driver;
-//s1
+
 	public HostPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
