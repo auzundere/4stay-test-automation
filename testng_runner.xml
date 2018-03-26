@@ -13,6 +13,21 @@
 			<class name="com.fourstay.tests.FS004"></class>
 			<class name="com.fourstay.tests.FS005"></class>
 			<class name="com.fourstay.tests.FS006"></class>
+			<class name="com.fourstay.tests.FS007"></class>
+			<class name="com.fourstay.tests.FS008"></class>
+			<class name="com.fourstay.tests.FS009"></class>
+			<class name="com.fourstay.tests.FS010"></class>
+			<class name="com.fourstay.tests.FS011"></class>
+			<class name="com.fourstay.tests.FS012"></class>
+			<class name="com.fourstay.tests.FS013"></class>
+			<class name="com.fourstay.tests.FS014"></class>
+			<class name="com.fourstay.tests.FS015"></class>
+			<class name="com.fourstay.tests.FS016"></class>
+			<class name="com.fourstay.tests.FS017"></class>
+			<class name="com.fourstay.tests.FS018"></class>
+			<class name="com.fourstay.tests.FS019"></class>
+			<class name="com.fourstay.tests.FS020"></class>
+			
 		</classes>
 	</test>
 </suite>
