@@ -43,7 +43,7 @@ public class FS019 extends TestBaseClass {
 	
 	@Test
 	public void Test8() throws InterruptedException {
-		driver.get(Configuration.getProperty("urlFS015"));
+		driver.get(Configuration.getProperty("url"));
 		driver.manage().window().maximize();
 
 
