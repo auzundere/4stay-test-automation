@@ -9,7 +9,6 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -22,7 +21,6 @@ import com.fourstay.utilities.TestBaseClass;
 public class FS008 extends TestBaseClass {
 
 	public static WebElement highlightElement(WebElement elem) {
-
 		// draw a border around the found element
 		if (driver instanceof JavascriptExecutor) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", elem);
@@ -31,7 +29,6 @@ public class FS008 extends TestBaseClass {
 	}
 
 	public static WebElement highlightElement(WebElement elem, String style) {
-
 		// draw a border around the found element
 		if (driver instanceof JavascriptExecutor) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid " + style + "'", elem);
@@ -51,8 +48,6 @@ public class FS008 extends TestBaseClass {
 	public void Test8() throws InterruptedException {
 		driver.get(Configuration.getProperty("urlFS008"));
 		SoftAssert softAssert = new SoftAssert();
-
-		// --Step 1--
 		HomePage homePage = new HomePage(driver);
 
 		// verify home page loaded(the left top corner logo is displayed)
@@ -63,14 +58,10 @@ public class FS008 extends TestBaseClass {
 		Alert alert = driver.switchTo().alert();
 		Thread.sleep(3000);
 		alert.accept();
-		// ---------------------
-		//-----
 		assertTrue(homePage.logo.isDisplayed(), "logo");
 		// *verify that home page loaded correctly: URL of loaded page is equal to
-		// expected URL.
 		softAssert.assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		// *verify that home page loaded correctly: Title of a loaded page is equal to
-		// expected title
 		softAssert.assertEquals(driver.getTitle(), "Room rental, roommate finder, off-campus housing, homestay | 4stay",
 				"(!)title not equal");
 
@@ -86,9 +77,10 @@ public class FS008 extends TestBaseClass {
 		}
 		// System.out.println("++ "+d2_titles_str.contains("Rent medium to long-term
 		// furnished stays today!"));
-		softAssert.assertTrue((d2_titles_str.contains("Rent medium to long-term furnished stays today!")), "Text'Rent medium to long-term furnished stays today!'  does not find on the page");
+		softAssert.assertTrue((d2_titles_str.contains("Rent medium to long-term furnished stays today!")),
+				"Text'Rent medium to long-term furnished stays today!'  does not find on the page");
 
-		// --Step 2-- Click the SIGN UP to navigate to Sign-Up page.
+		// Click the SIGN UP to navigate to Sign-Up page.
 		homePage.signUp.click();
 
 		SignUpPage signUpPage = new SignUpPage(driver);
@@ -103,11 +95,9 @@ public class FS008 extends TestBaseClass {
 		softAssert.assertEquals(driver.getTitle(),
 				"Sign Up - Room rental, roommate finder, off-campus housing, homestay | 4stay", "(!)title1 not equal");
 
-		// Step 3. Click "More Options" button
+		// Click "More Options" button
 		BrowserUtils.waitForClickablility(signUpPage.moreOptions, 5);
 		signUpPage.moreOptions.click();
-
-		// Thread.sleep(500);
 
 		// *verify that page loaded correctly: URL of loaded page is equal to expected
 		// URL
@@ -145,23 +135,25 @@ public class FS008 extends TestBaseClass {
 		List<WebElement> nothing = driver.findElements(By.xpath("//NOdiv[@class='btn email-btn w-100 m-0 mb-3']"));
 		softAssert.assertTrue((nothing.size() == 0), "just to check that this element not loaded");
 
-		// Step 4. Click "Continue with Email button. Verify that the registration page
+		// Click "Continue with Email button. Verify that the registration page
 		// appears
 
 		signUpPage.emailButton.click();
 		BrowserUtils.waitForPageToLoad(2);
 
-		softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/sign-up#!/basic-information"), "problem 5");
+		softAssert.assertTrue(
+				driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/sign-up#!/basic-information"),
+				"problem 5");
 		// ------------------
-		((JavascriptExecutor) driver)
-				.executeScript("alert('URL of this page is equal to *https://fourstay-staging.herokuapp.com/sign-up#!/basic-information*')");
+		((JavascriptExecutor) driver).executeScript(
+				"alert('URL of this page is equal to *https://fourstay-staging.herokuapp.com/sign-up#!/basic-information*')");
 
 		Alert alert2 = driver.switchTo().alert();
 		Thread.sleep(3000);
 		alert.accept();
 		// -------------------
 
-		// Step 5. Fill up the input fields. Fill up the input fields.
+		// Fill up the input fields. Fill up the input fields.
 
 		signUpPage.firstName.sendKeys("TeslaSpace");
 		signUpPage.lastName.sendKeys("BestModel");
@@ -200,7 +192,7 @@ public class FS008 extends TestBaseClass {
 		// **softAssert.assertTrue(regPage.hostButton.isDisplayed(), "guestButton is not
 		// displayed");
 		softAssert.assertTrue(signUpPage.hostButton.isDisplayed(), "guestButton is not displayed");
-		// Step 6. 1) Click Guest button 2) Click Next button
+		// 1) Click Guest button 2) Click Next button
 
 		// ---------------------
 		highlightElement(signUpPage.guestButton, "blue");
@@ -214,7 +206,7 @@ public class FS008 extends TestBaseClass {
 		alert.accept();
 		// ---------------------
 
-		// Step 6. 1) Click Guest button. Click Next button
+		// 1) Click Guest button. Click Next button
 
 		signUpPage.guestButton.click();
 		signUpPage.nextButton.click();
@@ -249,19 +241,20 @@ public class FS008 extends TestBaseClass {
 		signUpPage.saveButton.click();
 		BrowserUtils.waitForPageToLoad(2);
 
-		//softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/"), "problem 6");
+		// softAssert.assertTrue(driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/"),
+		// "problem 6");
 
-		softAssert.assertTrue(homePage.label_h2.getText().equals("Rent medium to long-term furnished stays today!"), "problem 7");
+		softAssert.assertTrue(homePage.label_h2.getText().equals("Rent medium to long-term furnished stays today!"),
+				"problem 7");
 		softAssert.assertTrue(homePage.logOut.isDisplayed());
 
 		// ---------------------
 		flashElement(homePage.label_h2, "#C71585");
 		highlightElement(homePage.label_h2, "blue");
 		highlightElement(homePage.logOut, "red");
-		
 
-		((JavascriptExecutor) driver)
-				.executeScript("alert('We just got the HOME Page as registered GUEST. We have to verify that this text and LOG OUT link are displayed. All done! SignUp functionality for guest is working properly!')");
+		((JavascriptExecutor) driver).executeScript(
+				"alert('We just got the HOME Page as registered GUEST. We have to verify that this text and LOG OUT link are displayed. All done! SignUp functionality for guest is working properly!')");
 
 		Alert alert6 = driver.switchTo().alert();
 		Thread.sleep(4000);

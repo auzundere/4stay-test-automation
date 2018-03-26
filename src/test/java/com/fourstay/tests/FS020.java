@@ -13,8 +13,8 @@ import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
 public class FS020 extends TestBaseClass {
-	
-	@Test 
+
+	@Test
 	public void test() {
 		driver.get(Configuration.getProperty("url"));
 		LoginPage loginPage = new LoginPage(driver);
@@ -32,23 +32,23 @@ public class FS020 extends TestBaseClass {
 		hostPage.entirePlace.click();
 		hostPage.house.click();
 		BrowserUtils.waitForPageToLoad(1);
-		
+
 		hostPage.plusBadroom.click();
 		hostPage.plusBadroom.click();
-		
-		Actions actions = new Actions(driver);				
+
+		Actions actions = new Actions(driver);
 		actions.moveToElement(hostPage.plusBathroom).perform();
 		BrowserUtils.waitForClickablility(hostPage.plusBathroom, 2);
 		hostPage.plusBathroom.click();
-		
+
 		hostPage.femaleIcon.click();
 		hostPage.buttonNext.click();
 		assertTrue(hostPage.wifi.isDisplayed());
 		hostPage.wifi.click();
 		assertTrue(hostPage.wifi.isEnabled());
-		
+
 		assertTrue(hostPage.catsOkay.isDisplayed());
 		hostPage.catsOkay.click();
 		assertTrue(hostPage.catsOkay.isEnabled());
-}
+	}
 }
