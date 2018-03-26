@@ -9,14 +9,7 @@ import com.fourstay.pages.SignUpPage;
 import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
-/**
- * 
- * This test case ... 
- * 
- * 
- * 
- * 
- */
+
 public class FS004 extends TestBaseClass{
 	
 	@Test 
@@ -28,7 +21,6 @@ public class FS004 extends TestBaseClass{
 				//verify the Current URL is "https://fourstay-staging.herokuapp.com"
 				assertEquals(driver.getCurrentUrl(),"https://fourstay-staging.herokuapp.com/");
 				//verify the Home page title is "Room rental, roommate finder, off-campus housing, homestay | 4stay"
-				
 				assertTrue(homePage.isAt());
 				
 				//Step 2
@@ -47,11 +39,9 @@ public class FS004 extends TestBaseClass{
 				//Step 3
 				//Click More Options
 				signUpPage.moreOptions.click();
-				//Verify "Continue with Facebook" button is displayed
+				//Verify "Continue with Facebook", "Continue with Google","Continue with Email" buttons are displayed
 				assertEquals(signUpPage.facebookButton.getText(),"Continue with Facebook");
-				//Verify "Continue with Google" button is displayed
 				assertEquals(signUpPage.googleButton.getText(),"Continue with Google");
-				//Verify "Continue with Email" button is displayed
 				assertEquals(signUpPage.emailButton.getText(),"Continue with Email");
 				
 				//Step 4
@@ -64,7 +54,6 @@ public class FS004 extends TestBaseClass{
 				googlePage.nextEmail.click();
 				//Enter password and click next
 		        BrowserUtils.waitForVisibility(googlePage.password, 4);
-				//it will be the password
 				googlePage.password.sendKeys(Configuration.getProperty("googlepass"));
 				googlePage.nextPassword.click();
 			
@@ -82,11 +71,9 @@ public class FS004 extends TestBaseClass{
 					assertTrue(homePage.successful.getText().equals("Successfully authenticated."));
 					//verify "Log Out" text is appeared
 					assertTrue(homePage.logOut.isDisplayed());
-					System.out.println("Test Case FS004 is passed");
 					return;
 				}
 				//verify "Host" button is displayed
-				//BrowserUtils.waitForVisibility(signUpPage.hostButton, 5);
 				assertTrue(signUpPage.hostButton.isDisplayed());
 				
 				//Step 6
@@ -101,7 +88,7 @@ public class FS004 extends TestBaseClass{
 				
 				
 				//Step 7
-				//enter gmail address by generating it
+				//enter email address 
 				String email = BrowserUtils.generateEmail();
 				signUpPage.emailAddress.click();
 				signUpPage.emailAddress.clear();
@@ -117,11 +104,11 @@ public class FS004 extends TestBaseClass{
 				//enter something about yourself
 				signUpPage.about_me.click();
 				signUpPage.about_me.clear();
-				signUpPage.about_me.sendKeys("I am a Computer Science major Student");
+				signUpPage.about_me.sendKeys("Computer Science major Student");
 				//enter birth year
 				signUpPage.dob.click();
 				signUpPage.dob.sendKeys("1998");
-				//click save.
+				//click save
 				signUpPage.saveButton.click();
 				//verify home page loaded(the left top corner logo is displayed)
 				assertTrue(homePage.logo.isDisplayed());

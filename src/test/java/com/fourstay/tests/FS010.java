@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import com.fourstay.pages.GooglePage;
 import com.fourstay.pages.HomePage;
 import com.fourstay.pages.SignUpPage;
-import com.fourstay.utilities.BrowserUtils;
 import com.fourstay.utilities.Configuration;
 import com.fourstay.utilities.TestBaseClass;
 
